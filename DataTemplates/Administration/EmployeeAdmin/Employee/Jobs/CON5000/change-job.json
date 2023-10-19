@@ -1,0 +1,163 @@
+{
+  "login": {
+    "url": "https://rcda2000s5web.dlas1.ucloud.int/Login.aspx",
+    "isSSOUser": false,
+    "username": "fosterj_CXCU",
+    "password": "password"
+  },
+  "actions": [
+    {
+      "type": "navigate",
+      "navigation": {
+        "handler": "UINavigator.Menus.TopMenu",
+        "path": "Administration>"
+      }
+    },
+    {
+      "type": "navigate",
+      "navigation": {
+        "handler": "UINavigator.Menus.Administration.AdministrationMenu",
+        "path": "EmployeeAdmin>MyEmployees"
+      }
+    },
+    {
+      "type": "page",
+      "controls": [
+        {
+          "id": "ContentFrame",
+          "type": "switchFrame",
+          "value": ""
+        },
+        {
+          "id": "ctl00_Content_GridView1",
+          "type": "gridSearchAndSelect",
+          "objectValue": {
+            "search": {
+              "findByContorlId": "GridView1_firstSelect_0",
+              "findByControlValue": "Last name",
+              "operatorControlId": "GridView1_Operator_0",
+              "operatorControlValue": "Contains",
+              "searchInputControlId": "GridView1_TextEntryFilterControlInputBox_0",
+              "searchInputControlValue": "Alburn",
+              "searchButtonControlId": "GridView1_filterButton"
+            },
+            "select": {
+              "colindex": 0,
+              "value": "Alburn II, Al M."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "navigate",
+      "navigation": {
+        "IsPopUp": true,
+        "handler": "UINavigator.Menus.Administration.EmployeeMenu",
+        "path": "Jobs>JobSummary"
+      }
+    },
+    {
+      "type": "PopUp",
+      "controls": [
+        {
+          "id": "ContentFrame",
+          "type": "switchFrame",
+          "value": ""
+        },
+        {
+          "id": "rightMenu",
+          "type": "RightMenuLink",
+          "value": "0:0"
+        },
+        {
+          "id": "ctl00_Content_uc_eeChangeJob_frmChangeJob_csJob",
+          "type": "dropdown",
+          "value": "ADMINA",
+          "delayInSeconds": 1,
+          "validateControls": {
+            "visibleControls": [ "csAuthLevel2", "lblAuthLevel" ]
+          }
+        },
+        {
+          "id": "csAuthLevel2",
+          "type": "Dropdown",
+          "value": "",
+          "validateControls": {
+            "controlValues": [
+              "",
+              "Intermediate",
+              "Place Hold 6",
+              "Retail incl SBA"
+            ]
+          }
+        },
+        {
+          "id": "ctl00_Content_uc_eeChangeJob_frmChangeJob_csJobGroup",
+          "type": "dropdown",
+          "value": "MANU",
+          "delayInSeconds": 1
+        },
+        {
+          "id": "ctl00_Content_uc_eeChangeJob_frmChangeJob_csJob",
+          "type": "dropdown",
+          "value": "CFO",
+          "delayInSeconds": 1,
+          "validateControls": {
+            "visibleControls": [ "csAuthLevel2" ]
+          }
+        },
+        {
+          "id": "csAuthLevel2",
+          "type": "Dropdown",
+          "value": "",
+          "validateControls": {
+            "controlValues": [
+              ""
+            ]
+          }
+        },
+        {
+          "id": "ctl00_Content_uc_eeChangeJob_frmChangeJob_csJobGroup",
+          "type": "dropdown",
+          "value": "ADMIN",
+          "delayInSeconds": 1
+        },
+        {
+          "id": "ctl00_Content_uc_eeChangeJob_frmChangeJob_csJob",
+          "type": "dropdown",
+          "value": "ADMIN",
+          "delayInSeconds": 1,
+          "validateControls": {
+            "visibleControls": [ "csAuthLevel2" ]
+          }
+        },
+        {
+          "id": "csAuthLevel2",
+          "type": "Dropdown",
+          "value": "AL01"
+        },
+        {
+          "id": "ccJobEffectiveDate_user",
+          "type": "input",
+          "value": "01/24/2021"
+        },
+        {
+          "id": "ctl00_Content_uc_eeChangeJob_frmChangeJob_csReason",
+          "type": "dropdown",
+          "value": "301"
+        },
+        {
+          "id": "ctl00_btnSave",
+          "type": "buttonClick",
+          "value": null
+        },
+        {
+          "id": "ctl00_btnSave",
+          "type": "buttonClick",
+          "value": null
+        }
+      ]
+    }
+  ]
+}
