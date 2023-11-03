@@ -1,13 +1,14 @@
 ﻿
 using UINavigator.Services;
+using UltiProTests.Contracts;
 
 namespace UltiProTests.Services
 {
-    public class TestMethods : ITestMethods
+    public class TestMethodsService : ITestMethodsService
     {
         private readonly IMemCache _cache;
 
-        public TestMethods(IMemCache testCache) 
+        public TestMethodsService(IMemCache testCache) 
         {
             _cache = testCache;
         }

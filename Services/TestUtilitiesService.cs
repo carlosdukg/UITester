@@ -1,10 +1,11 @@
 ﻿
 using UINavigator.Models;
 using UINavigator.Models.UIModels;
+using UltiProTests.Contracts;
 
 namespace UltiProTests.Services
 {
-    public class TestUtilities : ITestUtilities
+    public class TestUtilitiesService : ITestUtilitiesService
     {
         public UIWizardStep? GetWizardStep(Enum stepName, EntryAction entryAction)
         {

@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using UINavigator.Services;
 
-public class MemCache : IMemCache
+public class MemCacheService : IMemCache
 {
     private readonly IMemoryCache _memoryCache;
 
-    public MemCache(IMemoryCache memoryCache) =>
+    public MemCacheService(IMemoryCache memoryCache) =>
         _memoryCache = memoryCache;
 
     public T? Get<T>(string key)

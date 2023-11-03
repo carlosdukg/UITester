@@ -1,57 +1,33 @@
-﻿using Microsoft.Extensions.Caching.Memory;
-using OpenQA.Selenium;
-using UINavigator.Common;
-using UltiProTests.Services;
+﻿using UltiProTests.Contracts;
 
 namespace UltiProTests.Tests.MyTeamTopMenu.MyEmployees.Employee
 {
     [TestClass]
     public class Personal_Menu_Tests
     {
-        private IWebDriver? _driver;
-        private ChromeWebDriver? _chormeDriver;
-        private TestHelper? _testHelper;
+        private readonly ITestHelperService _testHelper;
+
+        public Personal_Menu_Tests()
+        {
+            _testHelper = TestServiceProvider.GetService<ITestHelperService>();
+        }
 
         [TestInitialize]
         public void Initialize()
         {
-            _chormeDriver = new ChromeWebDriver();
-            _driver = _chormeDriver.GetDriver();
-
-            var cacheOptions = new MemoryCacheOptions
-            {
-                SizeLimit = 1024
-            };
-            var cache = new MemCache(new MemoryCache(cacheOptions));
-            var customerSelector = new CustomerSelector(_driver);
-            var login = new Login(_driver, customerSelector);
-            var navigate = new Navigation(_driver, login);
-            var testUtils = new TestUtilities();
-            var testMethods = new TestMethods(cache);
-
-            _testHelper = new TestHelper(navigate, testUtils, testMethods);
+            Assert.IsNotNull(_testHelper, "null test helper service");
         }
+
 
         [TestCleanup]
         public void TearDown()
         {
-            if (_driver != null)
-            {
-                _driver.Quit();
-            }
+            _testHelper.StopWebDriver();
         }
 
         [TestMethod]
         public async Task Transfer_Employee()
         {
-            if (_driver == null)
-            {
-                Assert.Fail("Null selenium driver");
-            }
-            if (_testHelper == null)
-            {
-                Assert.Fail("Null test helper");
-            }
             //*** arrange ***//
             var uiTest = await _testHelper
                 .LoadUITest(@"DataTemplates/Administration/EmployeeAdmin/Employee/Personal/transfer-employee.json");
@@ -62,7 +38,7 @@ namespace UltiProTests.Tests.MyTeamTopMenu.MyEmployees.Employee
             }
 
             //*** execute UI actions ***//
-            await _testHelper.ProcessUIActionsAsync(uiTest?.Actions, _driver);
+            await _testHelper.ProcessUIActionsAsync(uiTest);
         }
     }
 }

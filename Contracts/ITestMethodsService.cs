@@ -1,7 +1,6 @@
-﻿
-namespace UltiProTests.Services
+﻿namespace UltiProTests.Contracts
 {
-    public interface ITestMethods
+    public interface ITestMethodsService
     {
         string GenerateSSN();
 

@@ -1,8 +1,8 @@
 {
   "login": {
-    "url": "https://rcda2000s5web.dlas1.ucloud.int/Login.aspx",
+    "url": "https://rcda2000s4web.dlas1.ucloud.int/Login.aspx",
     "isSSOUser": false,
-    "username": "fosterj_CXCU",
+    "username": "fosterj_LDOS",
     "password": "password"
   },
   "actions": [
@@ -23,17 +23,6 @@
     {
       "type": "page",
       "controls": [
-        {
-          "id": "ContentFrame",
-          "type": "switchFrame",
-          "value": "last"
-        },
-        {
-          "id": "ContentFrame",
-          "type": "switchFrame",
-          "value": "",
-          "delayInSeconds": 3
-        },
         {
           "id": "ctl00_btnAdd",
           "type": "buttonClick",

@@ -2,9 +2,9 @@
 using UINavigator.Models;
 using UINavigator.Models.UIModels;
 
-namespace UltiProTests.Services
+namespace UltiProTests.Contracts
 {
-    public interface ITestUtilities
+    public interface ITestUtilitiesService
     {
         /// <summary>
         /// Get wizard step object from json test template.
