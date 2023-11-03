@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
-using UINavigator.Services;
+using UINavigator.Contracts;
 
-public class MemCacheService : IMemCache
+public class MemCacheService : IMemCacheService
 {
     private readonly IMemoryCache _memoryCache;
 

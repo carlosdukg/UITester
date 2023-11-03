@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using OpenQA.Selenium;
-using UINavigator.Common;
 using UINavigator.Models.UIModels;
-using UINavigator.Common.Contracts;
+using UINavigator.Contracts;
+using UINavigator.Extensions;
 using UltiProTests.Contracts;
 
 namespace UltiProTests.Services
@@ -127,7 +127,11 @@ namespace UltiProTests.Services
 
             foreach (var control in controls)
             {
-                _driver.SetUIControl(control, _testMethods);
+                if (!string.IsNullOrWhiteSpace(control.Setter))
+                {
+                    control.MethodsClass = _testMethods;
+                }
+                _driver.SetUIControl(control);
 
                 _validationsService.ValidateControlValue(control);
 

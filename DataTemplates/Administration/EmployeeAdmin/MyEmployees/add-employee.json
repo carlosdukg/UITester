@@ -9,15 +9,8 @@
     {
       "type": "navigate",
       "navigation": {
-        "handler": "UINavigator.Menus.TopMenu",
-        "path": "Administration>"
-      }
-    },
-    {
-      "type": "navigate",
-      "navigation": {
-        "handler": "UINavigator.Menus.Administration.AdministrationMenu",
-        "path": "EmployeeAdmin>MyEmployees>"
+        "mainMenu": "Administration",
+        "path": "EmployeeAdmin>MyEmployees"
       }
     },
     {
@@ -50,22 +43,24 @@
             {
               "id": "ctl00_Content_StartFV_txbSSN",
               "type": "input",
-              "value": "method:GenerateSSN"
+              "setter": "GenerateSSN",
+              "value": ""
             },
             {
               "id": "ctl00_Content_StartFV_txbSSNConfirmed",
               "type": "input",
-              "value": "method:GenerateSSN"
+              "setter": "GenerateSSN",
+              "value": ""
             },
             {
               "id": "ctl00_Content_StartFV_txbNameFirst",
               "type": "input",
-              "value": "CON5000_1_FNAME"
+              "value": "CON5000_200_FNAME"
             },
             {
               "id": "ctl00_Content_StartFV_txbNameLast",
               "type": "input",
-              "value": "CON5000_1_LNAME"
+              "value": "CON5000_200_LNAME"
             }
           ]
         },

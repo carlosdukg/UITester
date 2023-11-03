@@ -1,8 +1,4 @@
-﻿using Microsoft.Extensions.Caching.Memory;
-using OpenQA.Selenium;
-using UINavigator.Common;
-using UltiProTests.Contracts;
-using UltiProTests.Services;
+﻿using UltiProTests.Contracts;
 
 namespace UltiProTests.Tests.AdministrationTopMenu.EmployeeAdmin.MyEmployees
 {

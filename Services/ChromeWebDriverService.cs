@@ -1,8 +1,8 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using UINavigator.Services;
+using UINavigator.Contracts;
 
-public class ChromeWebDriverService : IChromeWebDriver
+public class ChromeWebDriverService : IChromeWebDriverService
 {
     public IWebDriver GetDriver()
     {

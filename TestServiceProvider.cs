@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using UINavigator.Common;
-using UINavigator.Common.Contracts;
+using UINavigator.Contracts;
 using UINavigator.Services;
 using UltiProTests.Contracts;
 using UltiProTests.Services;
@@ -24,10 +23,10 @@ namespace UltiProTests
             services
                 .AddMemoryCache()
                 .AddSingleton(driver)
-                .AddScoped<IMemCache, MemCacheService>()
-                .AddScoped<ICustomerSelectorService, CustomerSelector>()
-                .AddScoped<ILoginService, Login>()
-                .AddScoped<INavigationService, Navigation>()
+                .AddScoped<IMemCacheService, MemCacheService>()
+                .AddScoped<ICustomerSelectorService, CustomerSelectorService>()
+                .AddScoped<ILoginService, LoginService>()
+                .AddScoped<INavigationService, NavigationService>()
                 .AddScoped<ITestUtilitiesService, TestUtilitiesService>()
                 .AddScoped<ITestMethodsService, TestMethodsService>()
                 .AddScoped<IValidationsService, ValidationsService>()
