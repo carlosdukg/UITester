@@ -5,7 +5,7 @@ namespace UltiProTests.Tests.AdministrationTopMenu.EmployeeAdmin.MyEmployees
     [TestClass]
     public class CON1000_Admin_Job_Menu_Tests
     {
-        private readonly ITestHelperService? _testHelper;
+        private readonly ITestHelperService _testHelper;
 
         public CON1000_Admin_Job_Menu_Tests()
         {

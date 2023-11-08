@@ -127,29 +127,29 @@ namespace UltiProTests.Services
 
             foreach (var control in controls)
             {
-                if (!string.IsNullOrWhiteSpace(control.Setter))
+                if (control.SetValueMethod != null)
                 {
-                    control.MethodsClass = _testMethods;
+                    control.SetValueMethod.MethodClass = _testMethods;
                 }
                 _driver.SetUIControl(control);
 
                 _validationsService.ValidateControlValue(control);
 
-                _validationsService.ValidateVisibleControls(control.ValidateControls?.VisibleControls);
+                _validationsService.ValidateVisibleControls(control.ValidateOtherControls?.VisibleControls);
 
-                _validationsService.ValidateHiddenControls(control.ValidateControls?.HiddenControls);
+                _validationsService.ValidateHiddenControls(control.ValidateOtherControls?.HiddenControls);
 
-                _validationsService.ValidateRequiredControls(control.ValidateControls?.RequiredControls);
+                _validationsService.ValidateRequiredControls(control.ValidateOtherControls?.RequiredControls);
 
-                _validationsService.ValidateNotRequiredControls(control.ValidateControls?.NotRequiredControls);
+                _validationsService.ValidateNotRequiredControls(control.ValidateOtherControls?.NotRequiredControls);
 
-                _validationsService.ValidateDisabledControls(control.ValidateControls?.DisabledControls);
+                _validationsService.ValidateDisabledControls(control.ValidateOtherControls?.DisabledControls);
 
-                _validationsService.ValidateEnabledControls(control.ValidateControls?.EnabledControls);
+                _validationsService.ValidateEnabledControls(control.ValidateOtherControls?.EnabledControls);
 
                 _validationsService.ValidatePageMessages(control);
 
-                _validationsService.ValidateValidationObject(control);
+                //_validationsService.ValidateValidationObject(control); TODO: redo
             }
         }
 

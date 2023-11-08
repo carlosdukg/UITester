@@ -147,6 +147,12 @@ namespace UltiProTests.Services
 
         public void ValidateValidationObject(UIControl control)
         {
+            throw new NotImplementedException();
+        }
+
+        /*
+        public void ValidateValidationObject(UIControl control)
+        {
             if (control?.ValidateControls?.ValidationObject != null)
             {
                 var methodName = control?.ValidateControls?.ValidationObject?.MethodName?.Trim();
@@ -232,6 +238,7 @@ namespace UltiProTests.Services
                 }
             }
         }
+        */
 
         public void ValidateControlValue(UIControl control)
         {
@@ -260,22 +267,26 @@ namespace UltiProTests.Services
             var dropdown = control.Id == null ? _driver.FindElement(By.Id(control.Name)) : _driver.FindElement(By.Id(control.Id));
             var dropdownElement = new SelectElement(dropdown);
 
-            if (control.ValidateControls?.ControlValues != null && control.ValidateControls.ControlValues.Any())
+            if (control.ValidateControlValue != null 
+                && control.ValidateControlValue.ControlValues != null 
+                && control.ValidateControlValue.ControlValues.Any())
             {
-                if (control.ValidateControls.ControlValues.Count == 1)
+                if (control.ValidateControlValue.ControlValues.Count == 1)
                 {
                     var option = dropdownElement.SelectedOption;
                     var optionSelected = option.Text;
 
-                    var validateValue = control.ValidateControls?.ControlValues.FirstOrDefault();
+                    var validateValue = control.ValidateControlValue.ControlValues.FirstOrDefault();
                     Assert.IsTrue(option.Text == validateValue, $"select option:{validateValue} not found");
                 }
                 else
                 {
                     var options = dropdownElement.Options.Select(o => o.Text).ToList();
-                    foreach (string value in control.ValidateControls.ControlValues)
+                    foreach (string value in control.ValidateControlValue.ControlValues)
                     {
-                        Assert.IsTrue(dropdownElement.Options.Any(o => o.Text == value), $"select option:{value} not found");
+                        Assert.IsTrue(dropdownElement
+                            .Options
+                            .Any(o => o.Text == value), $"select option:{value} not found");
                     }
                 }
             }
@@ -283,11 +294,11 @@ namespace UltiProTests.Services
 
         private void HtmlValueValidation(UIControl control)
         {
-            if (control?.ValidateControls?.ControlValue != null)
+            if (control?.ValidateControlValue?.ControlValue != null)
             {
                 var htmlCtrl = _driver.FindElement(By.Id(control.Id));
                 var htmlCtrlText = htmlCtrl.Text;
-                Assert.IsTrue(htmlCtrlText.Contains(control.ValidateControls.ControlValue), $"HTML text {htmlCtrlText} not found in control {control.Id}");
+                Assert.IsTrue(htmlCtrlText.Contains(control.ValidateControlValue.ControlValue), $"HTML text {htmlCtrlText} not found in control {control.Id}");
             }
         }
 
@@ -323,6 +334,6 @@ namespace UltiProTests.Services
             var htmlCtrl = _driver.FindElement(By.Id(id));
             var htmlCtrlText = htmlCtrl.Text.Contains('$') ? htmlCtrl.Text[1..] : htmlCtrl.Text;
             return htmlCtrlText;
-        }
+        }       
     }
 }

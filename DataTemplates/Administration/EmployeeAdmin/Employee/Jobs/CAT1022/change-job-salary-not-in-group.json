@@ -9,14 +9,7 @@
     {
       "type": "navigate",
       "navigation": {
-        "handler": "UINavigator.Menus.TopMenu",
-        "path": "Administration>"
-      }
-    },
-    {
-      "type": "navigate",
-      "navigation": {
-        "handler": "UINavigator.Menus.Administration.AdministrationMenu",
+        "mainMenu": "Administration",
         "path": "EmployeeAdmin>MyEmployees"
       }
     },
@@ -115,7 +108,7 @@
             {
               "id": "ctl00_Content_uc_eeChangeSalary_frmChangeSalary_csRatesPer",
               "type": "dropdown",
-              "value" :  "H"
+              "value": "H"
             },
             {
               "id": "ctl00_Content_uc_eeChangeSalary_frmChangeSalary_tbRate",

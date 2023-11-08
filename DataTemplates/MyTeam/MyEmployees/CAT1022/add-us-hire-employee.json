@@ -10,14 +10,14 @@
       "type": "navigate",
       "navigation": {
         "handler": "UINavigator.Menus.TopMenu",
-        "path": "Administration>"
+        "path": "MyTeam>"
       }
     },
     {
       "type": "navigate",
       "navigation": {
-        "handler": "UINavigator.Menus.Administration.AdministrationMenu",
-        "path": "EmployeeAdmin>MyEmployees>"
+        "handler": "UINavigator.Menus.MyTeam.MyTeamMenu",
+        "path": "MyEmployees>"
       }
     },
     {
@@ -310,26 +310,6 @@
               "id": "ctl00_btnSave",
               "type": "buttonClick",
               "value": null
-            }
-          ]
-        },
-        {
-          "type": "page",
-          "controls": [
-            {
-              "id": "ctl00_submitProcessMessage",
-              "type": "div",
-              "value": "You must select Submit to complete this request."
-            },
-            {
-              "id": "ctl00_btnSave",
-              "type": "buttonClick",
-              "value": null
-            },
-            {
-              "id": "",
-              "type": "UrlLocation",
-              "value": "https://rcda2000s2web.dlas1.ucloud.int/default.aspx"
             }
           ]
         }

@@ -9,15 +9,8 @@
     {
       "type": "navigate",
       "navigation": {
-        "handler": "UINavigator.Models.Menus.TopMenu",
-        "path": "Administration>"
-      }
-    },
-    {
-      "type": "navigate",
-      "navigation": {
-        "handler": "UINavigator.Models.Menus.AdministrationMenu",
-        "path": "EmployeeAdmin>MyEmployees>"
+        "mainMenu": "Administration",
+        "path": "EmployeeAdmin>MyEmployees"
       }
     },
     {

@@ -18,7 +18,7 @@
       "controls": [
         {
           "id": "ctl00_btnAdd",
-          "type": "buttonClick",
+          "type": "button",
           "value": null
         },
         {
@@ -43,13 +43,17 @@
             {
               "id": "ctl00_Content_StartFV_txbSSN",
               "type": "input",
-              "setter": "GenerateSSN",
+              "setValueMethod": {
+                "MethodName": "GenerateSSN"
+              },
               "value": ""
             },
             {
               "id": "ctl00_Content_StartFV_txbSSNConfirmed",
               "type": "input",
-              "setter": "GenerateSSN",
+              "setValueMethod": {
+                "MethodName": "GenerateSSN"
+              },
               "value": ""
             },
             {
@@ -229,7 +233,7 @@
           "controls": [
             {
               "id": "ctl00_btnSave",
-              "type": "buttonClick",
+              "type": "button",
               "value": null
             }
           ]
